@@ -1,71 +1,88 @@
 # fjsx24vecka44
 
-Fördjupa JavaScript-kunskaper - Ämnen: - objekt
+Fördjupa JavaScript-kunskaper - Ämnen: - high order array functions:
 
-### Object Bootcamp
+# Higher order functions - bootcamp
 
-## Bibblan
+## Övning 1
 
-1. Skapa ett objekt som innehåller data om en bok, nycklar som kan inkluderas är `title`, `author`, `numPages`.
-2. Skapa en array av objekt med flera stycken böcker
-3. Skapa en funktion som söker efter en titel i arrayen, om den hittar en så returneras objektet annars `null`. Låt funktionen ta emot arrayen med bok-objekt och söktermen som parametrar.
+Skriv ett program som nedan array returnerar en ny array med de tal som är jämna (använd modulus % operatorn).
 
-## Letter Frequency
+Skriv programmet först med en for-loop och sedan igen där du använder metoden filter(). Använd arrow functions.
 
-Räkna tecken i en sträng och organisera detta i ett objekt.
-Skapa en funktion som tar en sträng som input och ger ett objekt som output.
-
-Varje tecken är sin egna nyckel i objektet och värdet på nyckeln är antalet av det tecknet. Dvs, för varje tecken ska det finnas en nyckel i objektet och värdet på den nyckeln ska vara antal förekomster av det tecknet.
-
-Denna övning kräver dynamiska nycklar.
-
-```js
-letterFrequency("kalle"); // => {"k": 1. "a": 1, "l": 2, "e": 1}
-letterFrequency("aaaa"); // => {"a": 4}
-letterFrequency("ni talar bra latin"); // => {"n": 2, "i":2, " ":3, "t":2, "a":4,"l": 2,"r":2", "b":1 }
+```
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 ```
 
-## User Register
+## Övning 2
 
-För samtliga uppgifter nedan, ladda ner och utgå från users.js genom att lägga till
-`<script src="users.js">` innan er script-tag. Då har du en global variabel `users` som innehåller alla användare.
+Returnera i en ny array alla böcker av författaren Jules Verne från nedanstående array. Använd metoden filter().
 
-### filterByCountry
+```
+let books = [
+{ author: 'Oscar Wilde', title: 'The importance of being earnest'},
+{ author: 'Lewis Carroll', title: 'Alice in wonderland'},
+{ author: 'Jules Verne', title: 'Around the world in eighty days'},
+{ author: 'Victor Hugo', title: ' The Hunchback of Notre-Dame'},
+]
+```
 
-Skapa en funktion som tar emot listan på användare och en landskod och returnerar en ny lista innehållande endast användare med den landskoden.
+## Övning 3
 
-### filterByGender
+Skriv ett program som summerar ihop allas ålder och returnerar summan. Använd metoden reduce().
 
-Skapa en funktion som tar emot listan på användare och en sträng "Male" eller "Female" och returnerar en ny lista innehållande endast kvinnliga eller manliga användare.
+```
+let people = [
+  { age: 10, name: 'Gun-Britt'},
+  { age: 20, name: 'Conny'},
+  { age: 30, name: 'Aurora'},
+  { age: 40, name: 'Kalle'},
+  { age: 55, name: 'Max'},
+]
+```
 
-### listEmails
+## Övning 4
 
-Skapa en funktion som tar emot listan på användare och returnerar en lista innehållandes endast användarnas emailaddresser
+Skriv ett program som från nedanstående array retunerar det högsta talet, använd reduce().
 
-### Utmaning! - Reformat Emails
+```
+let numbers = [2, 3, 1, 5, 4, 10, 8, 7, 9, 6];
+```
 
-Chefen på bolaget vill att alla användare ska få nya e-mailaddresser.
-Just nu följer deras e-mail formatet `förnamn.efternamn@example.com`
-men chefen vill att de ska följa formatet `efternamn.förnamn@evilcorp.countrydomain`.
+## Övning 5
 
-Skapa en funktion som listar alla e-mail-adresser enligt det nya formatet.
+Skriv ett program som returnerar alla titlar och skriver sedan ut dessa med console.log. Använd metoden map().
 
-| Land           | Nat | Domän |
-| -------------- | --- | ----- |
-| Frankrike      | FR  | .fr   |
-| Schweiz        | CH  | .ch   |
-| Tyskland       | DE  | .de   |
-| Norge          | NO  | .no   |
-| USA            | US  | .us   |
-| Turkiet        | TR  | .tr   |
-| Findland       | FI  | .fi   |
-| Storbritannien | GB  | .uk   |
-| Nederländerna  | NL  | .nl   |
-| Nya Zeeland    | NZ  | .nz   |
-| Australien     | AU  | .au   |
-| Estland        | ES  | .ee   |
-| Irland         | IE  | .ie   |
-| Danmark        | DK  | .dk   |
-| Iran           | IR  | .ir   |
-| Brasilien      | BR  | .br   |
-| Kanada         | CA  | .ca   |
+```
+let books = [
+  { author: 'Oscar Wilde', title: 'The importance of being earnest'},
+  { author: 'Lewis Carroll', title: 'Alice in wonderland'},
+  { author: 'Jules Verne', title: 'Around the world in eighty days'},
+  { author: 'Victor Hugo', title: ' The Hunchback of Notre-Dame'},
+]
+```
+
+## Övning 6
+
+Skriv ett program som kollar om alla är under 40 och returnerar true eller false.
+
+```
+let people = [
+  { age: 10, name: 'Gun-Britt'},
+  { age: 20, name: 'Conny'},
+  { age: 30, name: 'Aurora'},
+  { age: 40, name: 'Kalle'},
+  { age: 55, name: 'Max'},
+]
+```
+
+## Övning 7
+
+Nu ska vi bygga en reseguide! Skapa upp en array som innehåller ett antal land-objekt. Var land-objekt har egenskapen `name` som innehåller namnet på landet och egenskapen `continent` som innehåller vilken kontinent landet ligger i. Alla värdsdelar ska finnas med med minst ett land från varje världsdel.
+
+Skriv sedan ett program som gör följande:
+
+1. Skriver ut namnet på alla länder.
+2. Skriver ut namnet på alla kontinenter.
+3. Skriver ut namnet på alla länder i Europa.
+4. Du kan söka efter land eller kontinent och få tillbaka ett resultat av sökningen.
