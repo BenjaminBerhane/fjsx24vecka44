@@ -1,146 +1,231 @@
-// // 1.1 Skapa och Manipulera Arrayer
-// // Exempel 1: Skapa en Array
+// code along torsdag:
 
-// let frukter = ["Äpple", "Banana", "Apelsin"];
-// console.log(frukter);
-// //
-// // Exempel 2: Åtkomst till Array-element
-
-// console.log(frukter[0]); // "Äpple"
-// console.log(frukter[1]); // "Banana"
-// //
-// // Exempel 3: Ändra ett Array-element
-
-// frukter[1] = "Mango";
-// console.log(frukter); // ["Äpple", "Mango", "Apelsin"]
-
-// // 1.2 Array-metoder
-// // Exempel 4: push() och pop()
-
-// frukter.push("Kiwi");
-// console.log(frukter); // ["Äpple", "Mango", "Apelsin", "Kiwi"]
-
-// let borttagenFrukt = frukter.pop();
-// console.log(frukter); // ["Äpple", "Mango", "Apelsin"]
-// console.log(borttagenFrukt); // "Kiwi"
-// //
-// // Exempel 5: unshift() och shift()
-
-// frukter.unshift("Jordgubbe");
-// console.log(frukter); // ["Jordgubbe", "Äpple", "Mango", "Apelsin"]
-
-// let förstaFrukt = frukter.shift();
-// console.log(frukter); // ["Äpple", "Mango", "Apelsin"]
-// console.log(förstaFrukt); // "Jordgubbe"
-// //
-// // Exempel 6: splice()
-
-// // Lägg till element med splice()
-// frukter.splice(1, 0, "Citron", "Lime");
-// console.log(frukter); // ["Äpple", "Citron", "Lime", "Mango", "Apelsin"]
-
-// // Ta bort element med splice()
-// frukter.splice(2, 1); // Tar bort "Lime"
-// console.log(frukter); // ["Äpple", "Citron", "Mango", "Apelsin"]
-
-// // 1.3 Iterera över Arrayer
-// // Exempel 7: For-loop
-
-// for (let i = 0; i < frukter.length; i++) {
-//   console.log(frukter[i]);
-// }
-// //
-// // Exempel 8: For-of-loop
-
-// for (let frukt of frukter) {
-//   console.log(frukt);
-// }
-// //
-// // Exempel 9: forEach()
-
-// frukter.forEach(function (frukt, index) {
-//   console.log(`${index}: ${frukt}`);
-// });
-
-// -----------------------------------------
-// High order functions: map(), filter(), reduce()
-
-let personer = [
-  { namn: "Anna", ålder: 28 },
-  { namn: "Björn", ålder: 35 },
-  { namn: "Cecilia", ålder: 42 },
-];
-
-//   Exempel 2: Använda map() för att Skapa en Ny Array
-
-let namnLista = personer.map(function (person) {
-  return person.namn;
-});
-
-console.log(namnLista); // ["Anna", "Björn", "Cecilia"]
-
-//   Exempel 3: Använda filter() för att Få Fram Särskilda Objekt
-
-let äldreÄn30 = personer.filter(function (person) {
-  return person.ålder > 30;
-});
-
-console.log(äldreÄn30);
-
-//   xempel 4: Introduktion till reduce()
+// Vad är en Funktion?
 
 // Förklaring:
-// reduce() används för att reducera en array till ett enda värde genom att utföra en funktion på varje element i arrayen i ordning.
+// En funktion är ett återanvändbart kodblock som utför en specifik uppgift.
 
-// Syntax:
+// Funktioner hjälper till att strukturera koden och undvika upprepning.
 
-array.reduce(function (ackumulator, nuvarandeVärde) {
-  // kodblock
-}, initieringsvärde);
+// Deklarera och Anropa Funktioner
+// Syntax för att deklarera en funktion:
 
-// -----------------------------------------
-// Objects:
-// Exempel 1: Skapa ett Objekt
+// function namnPåFunktionen(parameter1, parameter2) {
+//     // Kod som ska utföras
+//     return resultat;
+//   }
 
-let person = {
-  förnamn: "Anna",
-  efternamn: "Svensson",
-  ålder: 28,
-  stad: "Stockholm",
-};
-console.log(person);
+//   Exempel 1: En enkel funktion utan parametrar
 
-// Exempel 2: Åtkomst till Objektets Egenskaper
+//   function sägHej() {
+//     console.log("Hej världen!");
+//   }
 
-console.log(person.förnamn); // "Anna"
-console.log(person["efternamn"]); // "Svensson"
+//   sägHej(); // Anropar funktionen
 
-// Exempel 3: Ändra och Lägg till Egenskaper
+//   Exempel 2: Funktion med parametrar
 
-person.ålder = 29;
-person.land = "Sverige";
-console.log(person);
+//   function hälsa(namn) {
+//     console.log(`Hej, ${namn}!`);
+//   }
 
-// Objektmetoder
-// Exempel 4: Lägg till en Metod till Objektet
+//   hälsa("Alice");
+//   hälsa("Bob");
 
-person.hälsa = function () {
-  console.log(`Hej, jag heter ${this.förnamn} ${this.efternamn}.`);
-};
+// Förklaring:
 
-person.hälsa();
+// Parametrar: Variabler som tas emot av funktionen.
+// Argument: Värden som skickas in när funktionen anropas.
+// return: Används för att skicka tillbaka resultatet av beräkningen.
 
-// Exempel 5: this Nyckelordet
-// this refererar till det aktuella objektet.
+//   Exempel 3: Funktion med returvärde
 
-// 2.3 Objekt i Arrayer
-// Exempel 6: Array av Objekt
+// Vad är return och varför används det?
+// Förklaring:
 
-let böcker = [
-  { titel: "Mästaren och Margarita", författare: "Mikhail Bulgakov" },
-  { titel: "Brott och Straff", författare: "Fjodor Dostojevskij" },
-];
+// return-satsen avslutar exekveringen av en funktion och specificerar vilket värde som ska returneras till den plats där funktionen anropades.
+// Om ingen return-sats anges returnerar funktionen undefined.
+// return möjliggör att funktioner kan producera resultat som kan användas vidare i koden.
 
-for (let bok of böcker) {
-  console.log(`${bok.titel} av ${bok.författare}`);
-}
+// Vad är return och varför används det?
+// Förklaring:
+
+// return-satsen avslutar exekveringen av en funktion och specificerar vilket värde som ska returneras till den plats där funktionen anropades.
+// Om ingen return-sats anges returnerar funktionen undefined.
+// return möjliggör att funktioner kan producera resultat som kan användas vidare i koden.
+
+// Betydelsen av return
+// Viktiga punkter:
+
+// En funktion kan innehålla flera return-satser, men exekveringen av funktionen avslutas vid första return.
+// return kan användas för att avsluta en funktion tidigt baserat på vissa villkor.
+
+// Exempel 4: Tidig avslutning av funktion
+
+// function hittaKvadratRot(x) {
+//     if (x < 0) {
+//       return "Kan inte beräkna kvadratroten av negativa tal.";
+//     }
+//     return Math.sqrt(x);
+//   }
+
+//   console.log(hittaKvadratRot(9)); // 3
+//   console.log(hittaKvadratRot(-1)); // "Kan inte beräkna kvadratroten av negativa tal."
+
+// Exempel 1: Funktion utan return
+
+// function sägHej() {
+//     console.log("Hej!");
+//   }
+
+//   let hälsning = sägHej(); // "Hej!"
+//   console.log(hälsning); // undefined
+
+// Förklaring: Funktionen sägHej() skriver ut "Hej!" men returnerar inget värde, därför blir hälsning undefined.
+
+// Exempel 2: Funktion med return
+
+// function fåHälsning() {
+//     return "Hej!";
+//   }
+
+//   let hälsning = fåHälsning();
+//   console.log(hälsning); // "Hej!"
+
+//   Förklaring: Funktionen fåHälsning() returnerar strängen "Hej!", vilket gör att hälsning får detta värde.
+// Diskussion:
+
+// Varför använda return?
+// För att få ut resultat från funktioner som kan användas senare i koden.
+// För att bryta ut värden från funktioner istället för att bara utföra en uppgift.
+
+//   function addera(a, b) {
+//     return a + b;
+//   }
+
+//   let summa = addera(5, 3);
+//   console.log(`Summan är: ${summa}`);
+
+//   Anonyma Funktioner och Arrow Functions
+
+// Teori:
+// Varför använda olika typer av funktioner?
+// Namngivna Funktioner:
+
+// Fördelar:
+// Lätt att återanvända genom att anropa med sitt namn.
+// Bra för strukturering av kod.
+// Användning:
+// När funktionen behöver anropas från flera ställen.
+// När funktionens syfte är klart definierat.
+// Anonyma Funktioner:
+
+// Förklaring:
+// Funktioner utan namn som ofta används som argument till andra funktioner eller tilldelas till variabler.
+// Fördelar:
+// Användbara för tillfälliga uppgifter.
+// Minskar risken för namnkonflikter.
+// Användning:
+// I callback-funktioner, t.ex. i eventhanterare eller arraymetoder som forEach().
+
+// Arrow Functions:
+
+// Förklaring:
+// En kortare syntax för att skriva funktioner.
+// Behåller inte sitt eget this-värde, vilket kan vara användbart eller problematiskt beroende på sammanhang.
+// Fördelar:
+// Kortare och mer koncis syntax.
+// Lexikalt this-värde, vilket innebär att this bestäms av den omgivande koden.
+// Användning:
+// När man vill skriva korta funktioner, särskilt som callbacks.
+// I funktionella programmeringsmönster.
+
+// När ska man använda vilken typ av funktion?
+// Namngivna Funktioner:
+
+// När funktionen är central för applikationen och behöver anropas från flera ställen.
+// När det är viktigt för läsbarheten att funktionen har ett beskrivande namn.
+// Anonyma Funktioner:
+
+// När funktionen endast används en gång, t.ex. som en callback.
+// När man vill hålla koden mer inkapslad och undvika globala namn.
+// Arrow Functions:
+
+// När man vill ha en kortare syntax.
+// När man inte behöver ett eget this-värde.
+// Bra för inline-funktioner och funktionella programmeringsmönster.
+// Varningar:
+// Arrow Functions och this:
+
+// Arrow functions har inte sitt eget this, vilket innebär att de är olämpliga i vissa sammanhang, t.ex. som metoder i objekt.
+
+// Exempel på problem:
+
+// let person = {
+//     namn: "Alice",
+//     hälsa: () => {
+//       console.log(`Hej, jag heter ${this.namn}`);
+//     },
+//   };
+
+//   person.hälsa(); // "Hej, jag heter undefined"
+
+//   Förklaring: Här refererar this inte till person-objektet, utan till det globala objektet.
+// Rekommendation:
+
+// Använd traditionella funktioner för objektmetoder.
+// Använd arrow functions för callbacks och när this inte behövs.
+
+//   Anonyma Funktioner
+//   Förklaring:
+
+//   En funktion utan namn som ofta används som argument till andra funktioner eller tilldelas till variabler.
+
+//   Exempel 4: Tilldela en anonym funktion till en variabel
+
+//   let multiplicera = function (a, b) {
+//     return a * b;
+//   };
+
+//   let produkt = multiplicera(4, 5);
+//   console.log(`Produkten är: ${produkt}`);
+
+//   Arrow Functions (ES6)
+//   Förklaring:
+
+//   En kortare syntax för att skriva funktioner.
+//   Behåller inte sitt eget this-värde, vilket kan vara användbart i vissa sammanhang.
+//   Syntax:
+
+//   let funktionNamn = (parameter1, parameter2) => {
+//     // Kod som ska utföras
+//     return resultat;
+//   };
+
+//   Exempel 5: Omvandla en funktion till en arrow function
+
+// // Traditionell funktion
+// function kvadrera(x) {
+//     return x * x;
+//   }
+
+//   // Arrow function
+//   let kvadrera = (x) => {
+//     return x * x;
+//   };
+
+//   // Arrow function med implicit returvärde
+//   let kvadrera = (x) => x * x;
+
+//   console.log(kvadrera(6)); // Output: 36
+
+//   Exempel 6: Använda arrow functions i arraymetoder
+
+//   let tal = [1, 2, 3, 4, 5];
+//   let dubblaTal = tal.map((num) => num * 2);
+//   console.log(dubblaTal); // Output: [2, 4, 6, 8, 10]
+
+//   Diskussion:
+
+// När är det lämpligt att använda arrow functions?
+// Skillnader mellan arrow functions och traditionella funktioner.

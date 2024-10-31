@@ -1,161 +1,98 @@
-// console.log("Hello array thuesday");
+// console.log("Hello funtions Thursday");
 
-// // 1.1 Skapa och Manipulera Arrayer
-// // Exempel 1: Skapa en Array
-// let fruits = ["apple", "mango", "banana"];
+// Code along thursday.
 
-// // console.log("fruits: ", fruits);
+// Vad är en function?
 
-// // Exempel 2: Åtkomst till Array-element
-// // console.log("fruit at index 0: ", fruits[0]);
-// // console.log("fruit at index 1: ", fruits[1]);
-// // console.log("fruit at index 2: ", fruits[2]);
+// Deklarera och anropar man funktioner?
 
-// // Exempel 3: Ändra ett Array-element
-// fruits[1] = "mandarin";
-// // console.log("fruit at index 1 from line 15 and not from line 5: ", fruits[1]);
-// // console.log("fruits from line 15 and not from line 5: ", fruits);
+// Syntax för att deklarera en funktion:
 
-// // 1.2 Array-metoder
-// // Exempel 4: push() och pop()
-// fruits.push("kiwi");
-// // console.log("fruits: line 21", fruits);
-
-// let removedFruit = fruits.pop();
-
-// // console.log("fruits line 24: ", fruits);
-// // console.log("removedFruit line 24: ", typeof removedFruit);
-
-// //
-// // Exempel 5: unshift() och shift()
-
-// let lenghtOfFruitsArray = fruits.unshift("strawberry");
-// // console.log("fruits: line 32", fruits);
-// // console.log("lenghtOfFruitsArray: line 32", lenghtOfFruitsArray);
-
-// let strawberry = fruits.shift();
-// console.log("fruits: line 36", fruits);
-// // console.log("strawberry: line 36", strawberry);
-
-// //
-// // Exempel 6: splice()
-// // Lägg till element med splice()
-// fruits.splice(1, 0, "lime", "watermelon");
-
-// // console.log("fruits: line 43", fruits);
-
-// // Ta bort element med splice()
-// fruits.splice(2, 1);
-// // console.log("fruits: line 48", fruits);
-// fruits.splice(3, 1);
-// console.log("fruits: line 50", fruits);
-
-// // 1.3 Iterera över Arrayer
-// // Exempel 7: For-loop
-// for (let i = 0; i < fruits.length; i++) {
-//   console.log("fruit at index...", fruits[i]);
+// function nameOfTheFunction(params) {
+//   // Här innanför {} sker kod som ska utföras
+//   // return resutl
 // }
-// // Exempel 8: For-of-loop
-// for (const fruit of fruits) {
-//   console.log(
-//     "Each fruit from the fruits array inside the for-of-looop:  ",
-//     fruit
-//   );
+
+// skapa enkel funktion utan parameters
+
+// function sayHello() {
+//   console.log("Hej världen!");
 // }
-// // Exempel 9: forEach()
 
-// fruits.forEach(function (fruit, index) {
-//   console.log("fruit: ", fruit);
-// });
+// sayHello();
 
-// High order functions: map(), filter(), reduce()
+// skapa en funktion med parameter
 
-// let persons = [
-//   { firstName: "Anna", age: 28 },
-//   { firstName: "Jon", age: 18 },
-//   { firstName: "Greta", age: 68 },
-// ];
+// function sayHello(name) {
+//   console.log("Hej världen! Hälsningar från " + name);
+// }
 
-// console.log("persons: ", persons);
+// let promtName = prompt("säg ditt namn");
+// console.log(promtName);
 
-// // map() för skapa en Ny array
+// sayHello(promtName);
+// sayHello("Hans");
+// sayHello("Thomas");
 
-// let nameList = persons.map(function (person) {
-//   return person.firstName;
-// });
+// Vad return och varför används det?
 
-// console.log("nameList: ", nameList);
+// Tidigt avslut avslut av en funktion
 
-// //  använda filter() för att få fram särskilda Object
+// function findSquareRot(x) {
+//   if (x < 0) {
+//     return "Kan inte beräkna kvadratroten av negativa tal.";
+//   } else {
+//     return Math.sqrt(x);
+//   }
+// }
 
-// let ageOverRetirement = persons.filter(function (person) {
-//   return person.age >= 65;
-// });
+// console.log(findSquareRot(9));
+// console.log(findSquareRot(-11));
 
-// console.log("ageOverRetirement: ", ageOverRetirement);
+// function sayHello() {
+//   return console.log("Hej världen!");
+// }
 
-// //  reduce() den används för reducera en array till ett enda värde, genom att utföra en funktion på varje element i arrayen
+// let greeting = sayHello();
 
-// let reduceResult = persons.reduce(function (ackumulator, person) {
-//   return ackumulator + person.age;
-// }, 0);
+// console.log(greeting);
 
-// console.log("reduceResult: ", reduceResult);
+// function add(a, b) {
+//   return a + b;
+// }
 
-// objects:
+// console.log(add(5, 85));
+// // add(5, 85);
 
-// Skapa ett object:
+// anynoma funktioner, namngivna funktioner och arrow funktioner
 
-let family = {
-  personsFamily: "Mandus",
-  spouse: "Denada",
-  pets: [
-    { type: "cat", catName: "Fhizer", catAge: 4, isFemale: false },
-    { type: "cat", catName: "Bella", catAge: 3, isFemale: true },
-    { type: "cat", catName: "Simba", catAge: 1.5, isFemale: false },
-    { type: "cat", catName: "Milla", catAge: 1.5, isFemale: true },
-    { type: "cat", catName: "Chatti", catAge: 1.5, isFemale: true },
-  ],
-  siblings: 2,
-  parents: 2,
-};
+// let person = {
+//   firstName: "Alice",
+//   gretting: function () {
+//     console.log("hej jag heter " + this.firstName);
+//   },
+// };
 
-// console.log("Mandus family:", family.siblings);
-console.log("Mandus family:", family);
-console.log("Mandus family country:", family.country);
+// console.log(person.gretting());
 
-// åtkomst av data från ett object:
+// syntax för arrow functions
 
-// Mandus rekomenderar att använda denna:
-let wife1 = family.spouse;
-// inte denna:
-let wife = family["spouse"];
+// let functionName = (param1, param2) => {
+// // kod som ska utföras
+// return resultat;
+// }
 
-// console.log("wife1: ", wife1);
-// console.log("wife: ", wife);
+// let add = (a, b) => a + b;
 
-// Ändra och lägga till egenskaper:
+// let add2 = (a, b, string1) => {
+//   return a + b;
+// };
 
-family.siblings = 3;
-console.log("family is growing?: ", family);
+// console.log(add(1, 2));
+// console.log(add2(1, 2, "hej"));
 
-family.country = "Sverige";
-console.log("family is is getting a new key/value pair?: ", family);
+// let num = [1, 2, 3, 4, 5];
 
-// object metoder/function
-// lägg till en metod/function:
-family.greeting = function () {
-  console.log(
-    `Hej Mandus fru heter ${this.spouse} och dom har ${this.pets.length} katter i sitt hem`
-  );
-};
+// let multiply = num.map((mandus) => mandus * 2);
 
-// console.log("family down here with a function?: ", family);
-
-// family.greeting();
-
-let reduceResult = family.pets.reduce(function (ackumulator, pet) {
-  return ackumulator + pet.catAge;
-}, 0);
-
-console.log("reduceResult: ", reduceResult);
+// console.log(multiply);

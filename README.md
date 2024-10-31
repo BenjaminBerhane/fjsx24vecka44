@@ -1,88 +1,98 @@
 # fjsx24vecka44
 
-Fördjupa JavaScript-kunskaper - Ämnen: - high order array functions:
+Fördjupa JavaScript-kunskaper - Ämnen: - Functions:
 
-# Higher order functions - bootcamp
+# Functions - bootcamp
 
-## Övning 1
+Övning 1: Bryta ner kod i återanvändbara funktioner (Medel)
+Uppgift:
 
-Skriv ett program som nedan array returnerar en ny array med de tal som är jämna (använd modulus % operatorn).
+Du har följande kod som beräknar omkretsen och arean av en cirkel:
 
-Skriv programmet först med en for-loop och sedan igen där du använder metoden filter(). Använd arrow functions.
+javascript
+Kopiera kod
+let radie = 5;
+let omkrets = 2 _ Math.PI _ radie;
+let area = Math.PI _ radie _ radie;
+console.log(`Omkretsen är: ${omkrets}`);
+console.log(`Arean är: ${area}`);
+Uppgift:
 
-```
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-```
+Bryt ner koden i två separata funktioner: beräknaOmkrets(radie) och beräknaArea(radie).
+Använd funktionerna för att beräkna omkretsen och arean för cirklar med olika radier.
+Skriv ut resultaten.
+Mål:
 
-## Övning 2
+Öva på att skapa och anropa funktioner med parametrar och returvärden.
+Förstå fördelarna med att återanvända kod.
+Övning 2: Förstå scope och variabeltillgänglighet (Medel)
+Uppgift:
 
-Returnera i en ny array alla böcker av författaren Jules Verne från nedanstående array. Använd metoden filter().
+Studera följande kod:
 
-```
-let books = [
-{ author: 'Oscar Wilde', title: 'The importance of being earnest'},
-{ author: 'Lewis Carroll', title: 'Alice in wonderland'},
-{ author: 'Jules Verne', title: 'Around the world in eighty days'},
-{ author: 'Victor Hugo', title: ' The Hunchback of Notre-Dame'},
-]
-```
+javascript
+Kopiera kod
+let x = 10;
 
-## Övning 3
+function ändraX() {
+let x = 20;
+console.log(`Inuti funktionen, x = ${x}`);
+}
 
-Skriv ett program som summerar ihop allas ålder och returnerar summan. Använd metoden reduce().
+ändraX();
+console.log(`Utanför funktionen, x = ${x}`);
+Frågor:
 
-```
-let people = [
-  { age: 10, name: 'Gun-Britt'},
-  { age: 20, name: 'Conny'},
-  { age: 30, name: 'Aurora'},
-  { age: 40, name: 'Kalle'},
-  { age: 55, name: 'Max'},
-]
-```
+Vad kommer att skrivas ut av console.log()-satserna?
+Ändras värdet av x utanför funktionen?
+Modifiera koden så att funktionen faktiskt ändrar värdet av x i det globala scopet.
+Mål:
 
-## Övning 4
+Förstå skillnaden mellan lokala och globala variabler.
+Lära sig hur scope påverkar variabeltillgänglighet.
+Övning 3: Anonyma funktioner och arrow functions (Svår)
+Uppgift:
 
-Skriv ett program som från nedanstående array retunerar det högsta talet, använd reduce().
+Skapa en array av tal: [1, 2, 3, 4, 5].
+Använd setTimeout() och en anonym funktion för att skriva ut varje tal med en fördröjning på 1 sekund mellan varje utskrift.
+Modifiera koden för att använda arrow functions istället för anonyma funktioner.
+Förklara hur closure påverkar detta exempel.
+Mål:
 
-```
-let numbers = [2, 3, 1, 5, 4, 10, 8, 7, 9, 6];
-```
+Förstå användningen av anonyma funktioner och arrow functions i asynkrona sammanhang.
+Lära sig om closures och hur variabler bevaras i funktioner.
 
-## Övning 5
+Övning 4: Rekursiva Funktioner (Svår)
+Uppgift:
 
-Skriv ett program som returnerar alla titlar och skriver sedan ut dessa med console.log. Använd metoden map().
+Skriv en rekursiv funktion fakultet(n) som beräknar n! (n fakultet).
+Testa funktionen med olika värden av n.
+Förklara hur rekursion fungerar i detta sammanhang.
+Mål:
 
-```
-let books = [
-  { author: 'Oscar Wilde', title: 'The importance of being earnest'},
-  { author: 'Lewis Carroll', title: 'Alice in wonderland'},
-  { author: 'Jules Verne', title: 'Around the world in eighty days'},
-  { author: 'Victor Hugo', title: ' The Hunchback of Notre-Dame'},
-]
-```
+Förstå konceptet av rekursion och hur man implementerar det i JavaScript.
+Lära sig att tänka algoritmiskt för att lösa problem.
+Övning 5: Scope och Hoisting (Svår)
+Uppgift:
 
-## Övning 6
+Analysera följande kod:
 
-Skriv ett program som kollar om alla är under 40 och returnerar true eller false.
+javascript
+Kopiera kod
+console.log(x);
+var x = 5;
 
-```
-let people = [
-  { age: 10, name: 'Gun-Britt'},
-  { age: 20, name: 'Conny'},
-  { age: 30, name: 'Aurora'},
-  { age: 40, name: 'Kalle'},
-  { age: 55, name: 'Max'},
-]
-```
+funktion();
 
-## Övning 7
+function funktion() {
+console.log("Inuti funktionen");
+}
+Frågor:
 
-Nu ska vi bygga en reseguide! Skapa upp en array som innehåller ett antal land-objekt. Var land-objekt har egenskapen `name` som innehåller namnet på landet och egenskapen `continent` som innehåller vilken kontinent landet ligger i. Alla värdsdelar ska finnas med med minst ett land från varje världsdel.
+Vad kommer att skrivas ut av console.log(x)?
+Varför fungerar anropet till funktion() innan den är definierad?
+Modifiera koden genom att använda let istället för var och observera skillnaderna.
+Mål:
 
-Skriv sedan ett program som gör följande:
-
-1. Skriver ut namnet på alla länder.
-2. Skriver ut namnet på alla kontinenter.
-3. Skriver ut namnet på alla länder i Europa.
-4. Du kan söka efter land eller kontinent och få tillbaka ett resultat av sökningen.
+Förstå konceptet av hoisting i JavaScript.
+Lära sig skillnaderna mellan var, let och const.
