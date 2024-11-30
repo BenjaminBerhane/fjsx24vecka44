@@ -96,3 +96,43 @@
 // let multiply = num.map((mandus) => mandus * 2);
 
 // console.log(multiply);
+
+// let radie = 5;
+// let omkrets = 2 * Math.PI * radie;
+// let area = Math.PI *+ radie * radie;
+// console.log(`Omkretsen är: ${omkrets}`);
+// console.log(`Arean är: ${area}`);
+
+// function beräknaOmkrets(radie) {
+//     return radie * 2 * Math.PI
+// }
+// console.log(`Omkretsen är: ${beräknaOmkrets(5)}`);
+
+// function beräknaArea(radie) {
+//     return radie * radie * Math.PI
+// }
+// console.log(`Arean är: ${beräknaArea(5)}`);
+
+// let beräknaOmkrets2 = radie => radie * 2 * Math.PI
+//     console.log(beräknaOmkrets2(5));
+    
+// ;
+
+// console.log(`Omkretsen är: ${beräknaOmkrets(5)}`);
+
+// const arrays = [1, 2, 3, 4, 5];
+
+// array.forEach(( value, index) => {
+//     setTimeout(() => {
+//         console.log(value);
+//     },index * 1000);
+// });
+// counter(array);
+
+// const arraySquared = arrays.map(array => array * array);
+// const numbers = [10, 15, 20, 25, 30];
+// const evenNumbers = numbers.filter(number => number % 2 === 0 );
+// console.log(evenNumbers)
+
+const add = (a, b) => a + b;
+console.log(add(2));
